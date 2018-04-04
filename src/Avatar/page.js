@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import LazyLoad from 'react-lazy-load'
 import { withStyles } from 'material-ui/styles'
 
 import Grid from 'material-ui/Grid'
@@ -38,41 +39,45 @@ class Avatar extends Component {
   renderUser = (result, index) => {
     const { classes, isSearchLoading, searchUserRepos, setAvatar } = this.props
 
-    return <Card
-      key={index}
-      className={classes.Card}
-    >
-      <CardMedia
-        title={`Image of ${result.login}`}
-        image={result.avatar_url}
-        className={classes.CardMedia}
-      />
+    return (
+      <Card
+        key={index}
+        className={classes.Card}
+      >
+        <LazyLoad height={styles.CardMedia.height}>
+          <CardMedia
+            title={`Image of ${result.login}`}
+            image={result.avatar_url}
+            className={classes.CardMedia}
+          />
+        </LazyLoad>
 
-      <CardContent>
-        <Typography type='headline' component='h2' noWrap>{result.login}</Typography>
+        <CardContent>
+          <Typography type='headline' component='h2' noWrap>{result.login}</Typography>
 
-        <Typography component='p'><b>Score:</b> {result.score}</Typography>
-      </CardContent>
+          <Typography component='p'><b>Score:</b> {result.score}</Typography>
+        </CardContent>
 
-      <CardActions>
-        <Button
-          size='small'
-          color='primary'
-          onClick={() => searchUserRepos(result.login)}
-          disabled={isSearchLoading}
-        >
-          Load Repos
-        </Button>
+        <CardActions>
+          <Button
+            size='small'
+            color='primary'
+            onClick={() => searchUserRepos(result.login)}
+            disabled={isSearchLoading}
+          >
+            Load Repos
+          </Button>
 
-        <Button
-          size='small'
-          color='primary'
-          onClick={() => setAvatar(result)}
-        >
-          Set as Avatar
-        </Button>
-      </CardActions>
-    </Card>
+          <Button
+            size='small'
+            color='primary'
+            onClick={() => setAvatar(result)}
+          >
+            Set as Avatar
+          </Button>
+        </CardActions>
+      </Card>
+    )
   }
 
   renderUserRepo = (repo, index) => {
