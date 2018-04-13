@@ -1,8 +1,8 @@
 # React Redux template
 Production ready setup for React + Redux
 
-## [Live Demo](...)
-## [![App](https://raw.githubusercontent.com/IvanDimanov/react-redux-template/master/image.png)](...)
+## [Live Demo](https://v1n7qpgpth.execute-api.us-east-1.amazonaws.com/production/)
+## [![App](https://raw.githubusercontent.com/IvanDimanov/react-redux-template/master/image.png)](https://v1n7qpgpth.execute-api.us-east-1.amazonaws.com/production/)
 
 ## If you run ...
 ```
