@@ -1,0 +1,20 @@
+$darkBlue: #0C59A5;
+$lightBlue: #9CD0FF;
+$chenin: #CCB361;
+$mustard: #756013;
+$jarrah: #25191B;
+$olive: #91941D;
+$firebrick: #A00F19;
+$grey: #ddd;
+
+// Exports variables to be used in JS theme definition at assets/themes.
+:export {
+  darkBlue: $darkBlue;
+  lightBlue: $lightBlue;
+  chenin: $chenin;
+  mustard: $mustard;
+  jarrah: $jarrah;
+  olive: $olive;
+  firebrick: $firebrick;
+  grey: $grey;
+}

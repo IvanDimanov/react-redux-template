@@ -1,0 +1,51 @@
+import {Meta, Preview, Story} from '@storybook/addon-docs/blocks';
+import {linkTo} from '@storybook/addon-links';
+
+import styles from './styles';
+import componentsTreeImage from './components-tree.png';
+import docsTabImage from './docs-tab.png';
+
+<Meta title='Info/Welcome' />
+
+# Welcome
+Hi and Welcome to the <b style={styles.common}>React Redux Template</b> StoryBook!<br />
+Here you can find <b style={styles.common}>description of common components</b> and modules used in the creation of the system.
+<br />
+
+
+### Audience
+This document is meant for:
+- <b style={styles.common}>Devs</b><br />
+      If you're <b style={styles.common}>new to the project</b>, it might be helpful to look around and get familiar with the main building blocks and their behavior.<br />
+      If you're <b style={styles.common}>familiar with the project</b>, you may want to verify that your components look and feel as expected.
+      <br />
+      <br />
+
+- <b style={styles.common}>QAs</b><br />
+      Testing Application features always comes with the possibility that <b style={styles.common}>one component blocks the other</b> or when <b style={styles.common}>an error in one place trigger a problem elsewhere</b>.<br />
+      StoryBook provides <b style={styles.common}>isolated environment</b> for all component which makes them easier to test and talk about it.<br />
+      Following the <b style={styles.common}>simple steps of updating just the right properties</b> makes easier to <b style={styles.common}>reproduce results</b> and shared them between team members.
+      <br />
+      <br />
+
+
+### Getting started
+Feel free to browse the <b style={styles.common}>components tree</b> on the left
+<img src={componentsTreeImage} width={150} />
+<br />
+<br />
+
+
+You can always get more info on the component by using the <b style={styles.common}>Docs tab</b>
+<img src={docsTabImage} width={150} />
+<br />
+<br />
+
+
+Consider starting with one of the most common and simple components:
+<u><b
+  onClick={linkTo('Design System/Components/Error')}
+  style={{ ...styles.common, cursor: 'pointer' }}
+>
+  Component/Error
+</b></u>

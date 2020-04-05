@@ -1,0 +1,7 @@
+$baseDimension: 200px;
+
+.Full {
+  position: absolute;
+  top: calc(50% - #{$baseDimension / 2});
+  left: calc(50% - #{$baseDimension / 2});
+}

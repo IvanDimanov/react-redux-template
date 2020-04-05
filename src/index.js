@@ -1,34 +1,24 @@
 import React from 'react'
-import { createStore, applyMiddleware } from 'redux'
-import createSagaMiddleware from 'redux-saga'
-import { HashRouter as Router, Route } from 'react-router-dom'
-import { render } from 'react-dom'
-import { Provider } from 'react-redux'
+import ReactDOM from 'react-dom'
 
-import AsyncComponent from './utils/AsyncComponent'
-import AppTemplate from './AppTemplate'
+import App from 'App'
+import * as serviceWorker from 'serviceWorker'
 
-import sagas from './AppTemplate/sagas'
-import reducers from './AppTemplate/reducers'
+import whyDidYouRender from '@welldone-software/why-did-you-render'
 
-const sagaMiddleware = createSagaMiddleware()
-const store = createStore(
-  reducers,
-  applyMiddleware(sagaMiddleware)
-)
-sagaMiddleware.run(sagas)
+if (process.env.REACT_APP_TRACK_RENDERS === 'true') {
+  /**
+   * Gives a helping info in the console why a certain component re-renders
+   * https://github.com/welldone-software/why-did-you-render#why-did-you-render
+   */
+  whyDidYouRender(React, {
+    trackAllPureComponents: true,
+  })
+}
 
-const Home = () => import(/* webpackChunkName: "Home" */ './Home')
-const Avatar = () => import(/* webpackChunkName: "Avatar" */ './Avatar')
+ReactDOM.render(<App />, document.getElementById('root'))
 
-render(
-  <Provider store={store}>
-    <Router>
-      <AppTemplate>
-        <Route exact path='/' component={() => <AsyncComponent moduleProvider={Home} />} />
-        <Route exact path='/avatar' component={() => <AsyncComponent moduleProvider={Avatar} />} />
-      </AppTemplate>
-    </Router>
-  </Provider>,
-  document.getElementById('app')
-)
+// If you want your app to work offline and load faster, you can change
+// unregister() to register() below. Note this comes with some pitfalls.
+// Learn more about service workers: https://bit.ly/CRA-PWA
+serviceWorker.unregister()

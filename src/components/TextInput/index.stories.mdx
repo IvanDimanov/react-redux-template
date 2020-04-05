@@ -1,0 +1,29 @@
+import {Meta, Preview, Story, Props} from '@storybook/addon-docs/blocks';
+
+import TextInput from '../TextInput';
+
+<Meta
+  title='Design System/Components/TextInput'
+  component={TextInput}
+/>
+
+
+# Component/TextInput
+A basic UI component that allows for user input.<br />
+This component is based on the [Material UI Text Field Component](https://material-ui.com/components/text-fields/).
+
+
+#### Default
+<Preview>
+  <Story name='Default'>
+    <TextInput label='Default'/>
+  </Story>
+</Preview>
+
+
+#### Disabled
+<Preview>
+  <Story name='Disabled'>
+    <TextInput label='Disabled' disabled/>
+  </Story>
+</Preview>

@@ -1,0 +1,11 @@
+@import '~assets/styles/_colors.scss';
+
+.Card {
+  width: 600px;
+  margin: auto;
+}
+
+.NoValue {
+  color: $lightBlue;
+  padding: 0px 5px;
+}

@@ -1,0 +1,36 @@
+import {Meta, Preview, Story, Props} from '@storybook/addon-docs/blocks';
+
+import PersonCard from '../PersonCard';
+
+<Meta
+  title='Design System/Components/PersonCard'
+  component={PersonCard}
+/>
+
+
+# Component/PersonCard
+Used to present any personal data.
+
+
+#### Empty
+<Preview>
+  <Story name='Empty'>
+    <PersonCard person={{}} />
+  </Story>
+</Preview>
+
+
+#### Test data
+<Preview>
+  <Story name='Test data'>
+    <PersonCard person={{name: 'Luck Skywalker', fetchedSpecies: [{name: 'human'}], eye_color: 'blue', height: 180, mass: 75}} />
+  </Story>
+</Preview>
+
+
+#### Loading
+<Preview>
+  <Story name='Loading'>
+    <PersonCard isLoading person={{name: 'Luck Skywalker', fetchedSpecies: [{name: 'human'}], eye_color: 'blue', height: 180, mass: 75}} />
+  </Story>
+</Preview>

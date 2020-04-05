@@ -1,0 +1,31 @@
+import {Meta, Preview, Story, Props} from '@storybook/addon-docs/blocks';
+import {withKnobs, boolean, number} from '@storybook/addon-knobs';
+
+import Spinner from '../Spinner';
+
+<Meta
+  title='Design System/Components/Spinner'
+  component={Spinner}
+  decorators={[withKnobs]}
+/>
+
+
+# Component/Spinner
+A basic UI Spinner component that allows to indicate a loading state.
+
+
+#### The Default view renders simple Spinner.
+<Preview>
+  <Story name='Default'>
+    <Spinner/>
+  </Story>
+</Preview>
+
+
+## Spinner Size
+Spinner with different size.
+<Preview>
+  <Story name='Spinner Size'>
+    <Spinner size={number('size', 50)} />
+  </Story>
+</Preview>

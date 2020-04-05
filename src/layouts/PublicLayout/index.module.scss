@@ -1,0 +1,23 @@
+@import '~assets/styles/_colors.scss';
+
+.HeaderNavigation {
+  background-color: $mustard;
+  box-shadow: 0px 5px 10px $jarrah;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 25px 0;
+}
+
+.ActiveLink {
+  text-decoration: underline;
+  font-weight: bolder;
+}
+
+.PersonName {
+  color: $chenin;
+}
+
+.ContentWrap {
+  padding: 20px 50px;
+}

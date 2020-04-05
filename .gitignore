@@ -34,6 +34,7 @@ bower_components
 
 # Compiled binary addons (http://nodejs.org/api/addons.html)
 build
+storybook-static
 
 # Dependency directories
 node_modules/
@@ -59,8 +60,15 @@ typings/
 
 # dotenv environment variables file
 .env
+.env.build
+.env.development.local
 
 # IDEs
 .vscode
 
+dist
+artifacts
 notes
+readme.html
+
+.now

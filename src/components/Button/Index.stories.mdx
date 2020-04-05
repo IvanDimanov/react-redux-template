@@ -1,0 +1,37 @@
+import {Meta, Preview, Story, Props} from '@storybook/addon-docs/blocks';
+
+import Button from '../Button';
+
+<Meta
+  title='Design System/Components/Button'
+  component={Button}
+/>
+
+
+# Component/Button
+A basic UI button component that allows to execute an action in one click.<br />
+This component is based on the [Material UI Button Component](https://material-ui.com/components/buttons/).
+
+
+#### Default
+<Preview>
+  <Story name='Default'>
+    <Button>Default Button</Button>
+  </Story>
+</Preview>
+
+
+#### Secondary
+<Preview>
+  <Story name='Secondary'>
+    <Button color='secondary'>Secondary colors Button</Button>
+  </Story>
+</Preview>
+
+
+#### Loading and Disabled
+<Preview>
+  <Story name='Loading'>
+    <Button isLoading disabled />
+  </Story>
+</Preview>

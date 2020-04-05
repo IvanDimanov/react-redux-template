@@ -1,0 +1,59 @@
+import {Meta, Preview, Story, Props} from '@storybook/addon-docs/blocks';
+import {withKnobs, text} from '@storybook/addon-knobs';
+import {linkTo} from '@storybook/addon-links'
+
+import FormError from '../FormError';
+
+<Meta
+  title='Design System/Components/FormError'
+  component={FormError}
+  decorators={[withKnobs]}
+/>
+
+
+# Component/FormError
+Default way of presenting error messages in UI Forms.<br />
+Uses the <b>Component/Error</b>.
+<br />
+
+
+#### Compatible with errors from `react-hook-form`
+`<FormError error={errors.email} />`
+
+<Preview>
+  <Story name='Default'>
+    <FormError error={{message: 'Test error message'}} />
+  </Story>
+</Preview>
+
+
+#### Component props
+<Props of={FormError} />
+
+
+#### Can show error message for `required`
+
+<Preview>
+  <Story name='Required'>
+    <FormError error={{type: 'required'}} />
+  </Story>
+</Preview>
+
+
+#### Can show error message for `minimum length`
+
+<Preview>
+  <Story name='Min length'>
+    <FormError error={{type: 'minLength'}} minLength={3} />
+  </Story>
+</Preview>
+
+
+#### Can show error message for `maximum length`
+
+<Preview>
+  <Story name='Max length'>
+    <FormError error={{type: 'maxLength'}} maxLength={14} />
+  </Story>
+</Preview>
+
