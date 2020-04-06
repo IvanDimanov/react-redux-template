@@ -5,6 +5,7 @@ import {
   defaultFontSize,
   darkBlue,
   lightBlue,
+  royalBlue,
   chenin,
   mustard,
   jarrah,
@@ -14,10 +15,10 @@ const theme = createMuiTheme({
   palette: {
     primary: {
       main: darkBlue,
-      dark: lightBlue,
+      dark: royalBlue,
     },
     action: {
-      disabledBackground: lightBlue,
+      disabledBackground: royalBlue,
     },
   },
 
@@ -30,8 +31,11 @@ const theme = createMuiTheme({
     MuiButton: {
       root: {
         backgroundColor: darkBlue,
+        color: lightBlue,
+        textTransform: 'capitalize',
+
         '&:hover': {
-          backgroundColor: lightBlue,
+          backgroundColor: royalBlue,
         },
 
         '&.Mui-disabled': {

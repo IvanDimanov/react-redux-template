@@ -40,41 +40,48 @@ const Person = () => {
         isLoading={isLoading}
       />
 
-      <Grid container spacing={3} className={styles.GridContainer}>
+      <br />
+
+      <Grid
+        container
+        spacing={0}
+        justify='space-between'
+        className={styles.GridContainer}
+      >
         <Grid item xs={12}>
           {errorMessage && <Error>{errorMessage}</Error>}
+          <br />
         </Grid>
 
-        <Grid item xs={4}>
-          <Button
-            onClick={fetchPersonById(1)}
-            isLoading={isLoading}
-            disabled={isLoading}
-          >
-            Luke
-          </Button>
-        </Grid>
+        <Button
+          className={styles.Button}
+          onClick={fetchPersonById(1)}
+          isLoading={isLoading}
+          disabled={isLoading}
+        >
+          Luke
+        </Button>
 
-        <Grid item xs={4}>
-          <Button
-            onClick={fetchPersonById(5)}
-            isLoading={isLoading}
-            disabled={isLoading}
-          >
-            Lea
-          </Button>
-        </Grid>
+        <Button
+          className={styles.Button}
+          onClick={fetchPersonById(5)}
+          isLoading={isLoading}
+          disabled={isLoading}
+        >
+          Lea
+        </Button>
 
-        <Grid item xs={4}>
-          <Button
-            color='secondary'
-            onClick={fetchPersonById(100)}
-            isLoading={isLoading}
-            disabled={isLoading}
-          >
-            Test Error
-          </Button>
-        </Grid>
+
+        <Button
+          className={styles.Button}
+          color='secondary'
+          onClick={fetchPersonById(100)}
+          isLoading={isLoading}
+          disabled={isLoading}
+        >
+          Test Error
+        </Button>
+
       </Grid>
     </>
   )

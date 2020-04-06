@@ -6,6 +6,8 @@ import * as yup from 'yup'
 
 import {TextInput, Button} from 'components'
 
+import styles from './index.module.scss'
+
 
 const validationResolver = yup.object().shape({
   id: yup
@@ -38,6 +40,7 @@ const PersonForm = ({onSubmit, isLoading, defaultValues, className}) => {
       <Controller
         as={TextInput}
         name='id'
+        className={styles.TextInput}
         control={control}
         disabled={isLoading}
         error={Boolean(errors.id)}
@@ -49,6 +52,7 @@ const PersonForm = ({onSubmit, isLoading, defaultValues, className}) => {
       <br />
 
       <Button
+        className={styles.Button}
         type='submit'
         isLoading={isLoading}
         disabled={isLoading}
@@ -69,7 +73,7 @@ PersonForm.propTypes = {
 
 PersonForm.defaultProps = {
   isLoading: false,
-  defaultValues: {},
+  defaultValues: {id: 20},
   className: '',
 }
 
