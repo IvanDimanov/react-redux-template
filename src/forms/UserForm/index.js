@@ -10,11 +10,10 @@ import styles from './index.module.scss'
 
 
 const validationResolver = yup.object().shape({
-  id: yup
-    .number()
-    .integer()
-    .label('Person Id')
-    .min(1)
+  searchName: yup
+    .string()
+    .label('User name')
+    .min(2)
     .max(100)
     .required(),
 })
@@ -24,7 +23,7 @@ const getErrorMessage = error => {
 }
 
 
-const PersonForm = ({onSubmit, isLoading, defaultValues, className}) => {
+const UserForm = ({onSubmit, isLoading, defaultValues, className}) => {
   const {handleSubmit, control, errors, reset} = useForm({
     defaultValues,
     validationSchema: validationResolver,
@@ -39,14 +38,14 @@ const PersonForm = ({onSubmit, isLoading, defaultValues, className}) => {
     <form className={className} onSubmit={handleSubmit(onSubmit)}>
       <Controller
         as={TextInput}
-        name='id'
+        name='searchName'
         className={styles.TextInput}
         control={control}
         disabled={isLoading}
-        error={Boolean(errors.id)}
-        helperText={getErrorMessage(errors.id)}
+        error={Boolean(errors.searchName)}
+        helperText={getErrorMessage(errors.searchName)}
         required
-        label='Person Id'
+        label='User name'
       />
       <br />
       <br />
@@ -64,21 +63,21 @@ const PersonForm = ({onSubmit, isLoading, defaultValues, className}) => {
 }
 
 
-PersonForm.propTypes = {
+UserForm.propTypes = {
   onSubmit: PropTypes.func.isRequired,
   isLoading: PropTypes.bool,
   defaultValues: PropTypes.object,
   className: PropTypes.string,
 }
 
-PersonForm.defaultProps = {
+UserForm.defaultProps = {
   isLoading: false,
-  defaultValues: {id: 20},
+  defaultValues: {searchName: 'Smith'},
   className: '',
 }
 
-PersonForm.displayName = 'PersonForm'
+UserForm.displayName = 'UserForm'
 
 
-export default memo(PersonForm, isEqual)
+export default memo(UserForm, isEqual)
 

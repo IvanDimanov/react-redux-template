@@ -1,8 +1,8 @@
 import {combineReducers} from 'redux'
 
-import persons from './persons'
+import users from './users'
 
-const slices = [persons]
+const slices = [users]
 
 export default combineReducers(
   slices.reduce(

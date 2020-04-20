@@ -5,8 +5,8 @@ import LoadableRoute from 'utils/LoadableRoute'
 import PublicLayout from 'layouts/PublicLayout'
 
 const Home = lazy(() => import(/* webpackChunkName: "Home" */ '../pages/Home'))
-const Person = lazy(() => import(/* webpackChunkName: "Person" */ '../pages/Person'))
-const PersonForm = lazy(() => import(/* webpackChunkName: "PersonForm" */ '../pages/PersonForm'))
+const User = lazy(() => import(/* webpackChunkName: "User" */ '../pages/User'))
+const UserForm = lazy(() => import(/* webpackChunkName: "UserForm" */ '../pages/UserForm'))
 const NotFound = lazy(() => import(/* webpackChunkName: "NotFound" */ '../pages/NotFound'))
 
 const AppRouter = () => {
@@ -21,9 +21,9 @@ const AppRouter = () => {
 
         <LoadableRoute path='/home' component={Home} layout={PublicLayout} />
 
-        <LoadableRoute path='/person' component={Person} layout={PublicLayout} />
+        <LoadableRoute path='/user' component={User} layout={PublicLayout} />
 
-        <LoadableRoute path='/person-form' component={PersonForm} layout={PublicLayout} />
+        <LoadableRoute path='/user-form' component={UserForm} layout={PublicLayout} />
 
         <LoadableRoute component={NotFound} layout={PublicLayout} />
       </Switch>

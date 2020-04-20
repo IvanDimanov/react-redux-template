@@ -1,0 +1,36 @@
+import {Meta, Preview, Story, Props} from '@storybook/addon-docs/blocks';
+
+import UserCard from '../UserCard';
+
+<Meta
+  title='Design System/Components/UserCard'
+  component={UserCard}
+/>
+
+
+# Component/UserCard
+Used to present any user data.
+
+
+#### Empty
+<Preview>
+  <Story name='Empty'>
+    <UserCard user={{}} />
+  </Story>
+</Preview>
+
+
+#### Test data
+<Preview>
+  <Story name='Test data'>
+    <UserCard user={{login: 'jane', repos: [{id: 1, name: 'alexa', html_url: 'https://github.com/jane/alexa'}], avatar_url: 'https://avatars3.githubusercontent.com/u/7470425?v=4', type: 'user', html_url: 'https://github.com/jane'}} />
+  </Story>
+</Preview>
+
+
+#### Loading
+<Preview>
+  <Story name='Loading'>
+    <UserCard isLoading user={{login: 'jane', repos: [{id: 1, name: 'alexa', html_url: 'https://github.com/jane/alexa'}], avatar_url: 'https://avatars3.githubusercontent.com/u/7470425?v=4', type: 'user', html_url: 'https://github.com/jane'}} />
+  </Story>
+</Preview>

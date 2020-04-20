@@ -2,41 +2,41 @@ import React, {useCallback, useMemo} from 'react'
 import {useSelector, useDispatch} from 'react-redux'
 
 import Grid from '@material-ui/core/Grid'
-import {PersonCard, Button, Error} from 'components'
+import {UserCard, Button, Error} from 'components'
 
 import {
   REQUEST_STATUS_LOADING,
   REQUEST_STATUS_ERROR,
 } from 'slices/constants'
-import personsSlice from 'slices/persons'
+import usersSlice from 'slices/users'
 
 import styles from './index.module.scss'
 
 
-const Person = () => {
-  const personResponse = useSelector(({personsSlice}) => personsSlice?.person)
-  const {status, errorMessage} = useSelector(({personsSlice}) => personsSlice?.personRequest)
+const User = () => {
+  const userResponse = useSelector(({usersSlice}) => usersSlice?.user)
+  const {status, errorMessage} = useSelector(({usersSlice}) => usersSlice?.userRequest)
 
-  const person = useMemo(() => {
-    return status === REQUEST_STATUS_ERROR ? {} : personResponse
-  }, [personResponse, status])
+  const user = useMemo(() => {
+    return status === REQUEST_STATUS_ERROR ? {} : userResponse
+  }, [userResponse, status])
 
   const isLoading = useMemo(() => {
     return status === REQUEST_STATUS_LOADING
   }, [status])
 
   const dispatch = useDispatch()
-  const fetchPersonById = useCallback(id => () => {
-    dispatch(personsSlice.actions.fetchPersonById(id))
+  const fetchUserBySearchName = useCallback(name => () => {
+    dispatch(usersSlice.actions.fetchUserBySearchName(name))
   }, [dispatch])
 
 
   return (
     <>
-      <h1>Person</h1>
+      <h1>User</h1>
 
-      <PersonCard
-        person={person}
+      <UserCard
+        user={user}
         isLoading={isLoading}
       />
 
@@ -55,27 +55,27 @@ const Person = () => {
 
         <Button
           className={styles.Button}
-          onClick={fetchPersonById(1)}
+          onClick={fetchUserBySearchName('john')}
           isLoading={isLoading}
           disabled={isLoading}
         >
-          Luke
+          John
         </Button>
 
         <Button
           className={styles.Button}
-          onClick={fetchPersonById(5)}
+          onClick={fetchUserBySearchName('jane')}
           isLoading={isLoading}
           disabled={isLoading}
         >
-          Lea
+          Jane
         </Button>
 
 
         <Button
           className={styles.Button}
           color='secondary'
-          onClick={fetchPersonById(100)}
+          onClick={fetchUserBySearchName('-unknown-user-')}
           isLoading={isLoading}
           disabled={isLoading}
         >
@@ -88,4 +88,4 @@ const Person = () => {
 }
 
 
-export default Person
+export default User

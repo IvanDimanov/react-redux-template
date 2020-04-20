@@ -1,6 +1,6 @@
 export {default as Button} from './Button'
 export {default as Error} from './Error'
 export {default as FormError} from './FormError'
-export {default as PersonCard} from './PersonCard'
+export {default as UserCard} from './UserCard'
 export {default as Spinner} from './Spinner'
 export {default as TextInput} from './TextInput'

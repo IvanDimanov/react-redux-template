@@ -11,8 +11,8 @@ import styles from './index.module.scss'
 
 
 const PublicLayout = ({children}) => {
-  const person = useSelector(({personsSlice}) => personsSlice?.person)
-  const {status} = useSelector(({personsSlice}) => personsSlice?.personRequest)
+  const user = useSelector(({usersSlice}) => usersSlice?.user)
+  const {status} = useSelector(({usersSlice}) => usersSlice?.userRequest)
 
   const isLoaded = useMemo(() => status === REQUEST_STATUS_LOADED, [status])
 
@@ -23,12 +23,12 @@ const PublicLayout = ({children}) => {
           Home
         </NavLink>
 
-        <NavLink to='/person' activeClassName={styles.ActiveLink}>
-          Person
+        <NavLink to='/user' activeClassName={styles.ActiveLink}>
+          User
         </NavLink>
 
-        <NavLink to='/person-form' activeClassName={styles.ActiveLink}>
-          Person Form
+        <NavLink to='/user-form' activeClassName={styles.ActiveLink}>
+          User Form
         </NavLink>
 
         <NavLink to='/404' activeClassName={styles.ActiveLink}>
@@ -38,7 +38,7 @@ const PublicLayout = ({children}) => {
         <div>
           {isLoaded && (
             <>
-              Loaded Person: <span className={styles.PersonName}>{person?.name}</span>
+              Loaded User: <span className={styles.UserLogin}>{user?.login}</span>
             </>
           )}
         </div>
